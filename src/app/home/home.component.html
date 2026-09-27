@@ -15,7 +15,19 @@
   <button mat-flat-button id="Btn_Minus" (click)="valueChange(-1)">-1</button>
   <button mat-flat-button id="Btn_Plus" (click)="valueChange(1)">+1</button>
 
-  <mat-slider min="1" max="500" step="1" value={{num_try}} class="slider" id="myRange" (input)="getSliderValue($event,0,true)" (change)="saveValue($event, true)"></mat-slider>
+  <!--<mat-slider min="1" max="500" step="1" value={{num_try}} class="slider" id="myRange" (input)="getSliderValue($event,0,true)" (change)="saveValue($event, true)"></mat-slider>-->
+  <mat-slider
+    min="1"
+    max="500"
+    step="1"
+    class="slider">
+
+  <input
+      matSliderThumb
+      [value]="num_try"
+      (valueChange)="getSliderValue({ value: $event }, 0, true)"
+      (dragEnd)="saveValue({ value: $event.source.value }, true)">
+</mat-slider>
 
   @if (showButton) {
     <mat-toolbar>

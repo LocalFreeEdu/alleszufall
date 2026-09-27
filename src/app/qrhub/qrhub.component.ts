@@ -4,6 +4,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { BarcodeFormat } from '@zxing/library';
 
 @Component({
+  standalone: false,
   selector: 'app-qrhub',
   templateUrl: './qrhub.component.html',
   changeDetection: ChangeDetectionStrategy.Eager,
