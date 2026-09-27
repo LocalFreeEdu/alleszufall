@@ -1,28 +1,30 @@
 <div class="home-box">
-    <button mat-flat-button id="Btn_Neu" (click)="Create_random_numbers(true)">Neu</button>
-    <button mat-flat-button id="Btn_QR" (click)="openDialog()">
-        <img src="assets/qr_icon.png" alt="QR-Code" for="Btn_QR" width="25px">
-    </button>
+  <button mat-flat-button id="Btn_Neu" (click)="Create_random_numbers(true)">Neu</button>
+  <button mat-flat-button id="Btn_QR" (click)="openDialog()">
+    <img src="assets/qr_icon.png" alt="QR-Code" for="Btn_QR" width="25px">
+  </button>
 
-    <canvas id="myChart_iOS"></canvas>
-    <canvas id="myChart_Android"></canvas>
-    <canvas id="myChart_default"></canvas>
-    
-    <label id="y_titel">absolute Häufigkeit</label>
-    <label id="x_titel">Farben</label>
-    
-    <div id="Tries_box"><label id="numTries">Anzahl der Würfe: {{num_try}}</label></div>
-    <button mat-flat-button id="Btn_Minus" (click)="valueChange(-1)">-1</button>
-    <button mat-flat-button id="Btn_Plus" (click)="valueChange(1)">+1</button>
-    
-    <mat-slider min="1" max="500" step="1" value={{num_try}} class="slider" id="myRange" (input)="getSliderValue($event,0,true)" (change)="saveValue($event, true)"></mat-slider>
+  <canvas id="myChart_iOS"></canvas>
+  <canvas id="myChart_Android"></canvas>
+  <canvas id="myChart_default"></canvas>
 
-    <mat-toolbar *ngIf="showButton">
-        <mat-toolbar-row>
-          <span>Alles Zufall?</span>
-          <span class="example-spacer"></span>
-          <button mat-flat-button (click)="addToHomeScreen()" id="Btn_install">Installieren</button>
-          <button mat-flat-button (click)="closeInstallbanner()" id="Btn_close">X</button>
-        </mat-toolbar-row>
-      </mat-toolbar>
+  <label id="y_titel">absolute Häufigkeit</label>
+  <label id="x_titel">Farben</label>
+
+  <div id="Tries_box"><label id="numTries">Anzahl der Würfe: {{num_try}}</label></div>
+  <button mat-flat-button id="Btn_Minus" (click)="valueChange(-1)">-1</button>
+  <button mat-flat-button id="Btn_Plus" (click)="valueChange(1)">+1</button>
+
+  <mat-slider min="1" max="500" step="1" value={{num_try}} class="slider" id="myRange" (input)="getSliderValue($event,0,true)" (change)="saveValue($event, true)"></mat-slider>
+
+  @if (showButton) {
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <span>Alles Zufall?</span>
+        <span class="example-spacer"></span>
+        <button mat-flat-button (click)="addToHomeScreen()" id="Btn_install">Installieren</button>
+        <button mat-flat-button (click)="closeInstallbanner()" id="Btn_close">X</button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  }
 </div>
