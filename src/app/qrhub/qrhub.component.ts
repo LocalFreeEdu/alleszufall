@@ -13,8 +13,11 @@ export class QrhubComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<QrhubComponent>) { }
 
-  chart_arr:string[][];
-  qr_data:string;
+  /*chart_arr:string[][];
+  qr_data:string;*/
+
+  chart_arr: string[][] = [];
+  qr_data = '';
 
   formatsEnabled: BarcodeFormat[] = [
 /*     BarcodeFormat.CODE_128,
@@ -34,7 +37,8 @@ export class QrhubComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.chart_arr = JSON.parse(localStorage.getItem("wuerfe500"));
+    /*this.chart_arr = JSON.parse(localStorage.getItem("wuerfe500"));*/
+    this.chart_arr = JSON.parse(localStorage.getItem("wuerfe500") || "[]");
     this.qr_data = this.chart_arr.toString();
   }
 

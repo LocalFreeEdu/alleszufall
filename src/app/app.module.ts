@@ -15,7 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
-import { QRCodeModule } from 'angularx-qrcode';
+import { QRCodeComponent } from 'angularx-qrcode';
 import { QrhubComponent } from './qrhub/qrhub.component'
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 // import { DeviceDetectorService} from 'ngx-device-detector';
@@ -39,7 +39,7 @@ import { DatenschutzComponent } from './datenschutz/datenschutz.component';
     MatSliderModule,
     MatDialogModule,
     MatTabsModule,
-    QRCodeModule,
+    QRCodeComponent,
     ZXingScannerModule,
     // DeviceDetectorService,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
