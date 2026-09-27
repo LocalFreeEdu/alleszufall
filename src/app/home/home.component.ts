@@ -478,7 +478,7 @@ closeInstallbanner(){
   ngOnInit(): void {
 
     // Nch Updates suchen
-    if (this.swUpdate.isEnabled) {
+    /*if (this.swUpdate.isEnabled) {
       this.swUpdate.available.subscribe((evt) => {
         const updateApp = window.confirm(`
           Ein Update ist verfügbar (${evt.current.appData['version']} => ${evt.available.appData['version']}).
@@ -487,7 +487,7 @@ closeInstallbanner(){
         `);
         if (updateApp) { window.location.reload(); }
       });
-    }
+    }*/
 
     
     //Styles checken
