@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog'
 import { MatTabsModule } from '@angular/material/tabs';
 import { BarcodeFormat } from '@zxing/library';
@@ -6,6 +6,7 @@ import { BarcodeFormat } from '@zxing/library';
 @Component({
   selector: 'app-qrhub',
   templateUrl: './qrhub.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./qrhub.component.scss']
 })
 export class QrhubComponent implements OnInit {

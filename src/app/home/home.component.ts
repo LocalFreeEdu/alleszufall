@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { Chart } from 'node_modules/chart.js'
 import { MatDialog } from '@angular/material/dialog';
 import { QrhubComponent } from '../qrhub/qrhub.component';
@@ -228,6 +228,7 @@ function create_chart(num_try_send: number, ani_num:number, deviceOS_send:string
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./home.component.scss']
 })
 
